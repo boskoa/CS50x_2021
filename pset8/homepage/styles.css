@@ -1,0 +1,31 @@
+html, body {
+    height: 100%;
+    background-color: #e9fce9;
+}
+
+.page {
+    height: 100%;
+}
+
+a > button {
+    width: 8rem;
+    text-align: center;
+}
+
+article > p {
+    text-align: justify;
+}
+
+article > * {
+    margin: 1rem;
+}
+
+footer {
+    margin-top: auto;
+}
+
+@media only screen and (max-width: 1250px) {
+    #navi {
+        justify-content: center !important;
+    }
+}

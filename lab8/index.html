@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded", function() {
+                let mcAnswers = document.querySelectorAll("#mc > button");
+                for (let i = 0; i < mcAnswers.length; i++) {
+                    mcAnswers[i].addEventListener("click", function() {
+                        if (mcAnswers[i].innerHTML == "ENIAC") {
+                            mcAnswers[i].style.backgroundColor = "green";
+                            document.querySelector("#cam").innerHTML = "Correct!";
+                        }
+                        else {
+                            mcAnswers[i].style.backgroundColor = "red";
+                            document.querySelector("#cam").innerHTML = "Incorrect...";
+                        }
+                    })
+                }
+                let answer = document.querySelector("#answcheck");
+                answer.addEventListener("click", function() {
+                    if (answ.value == "Tim Berners-Lee") {
+                        answ.style.backgroundColor = "green";
+                        document.querySelector("#caq").innerHTML = "Correct!";
+                    }
+                    else {
+                        answ.style.backgroundColor = "red";
+                        document.querySelector("#caq").innerHTML = "Incorrect...";
+                    }
+                })
+            });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What was the name of the first electronic computer?</h3>
+                <form id="mc" action="javascript:void(0);">
+                    <button>Commodore 64</button>
+                    <button>Evian</button>
+                    <button>Macintosh</button>
+                    <button>ENIAC</button>
+                    <button>Colossus</button>
+                </form>
+                <p id="cam"><br></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+
+                <!-- TODO: Add free response question here -->
+                <h3>Who invented the World WIde Web?</h3>
+                <form action="javascript:void(0);">
+                    <input id="answ" type="text" autocomplete="off">
+                    <button id="answcheck" type="submit">Check</button>
+                </form>
+                <p id="caq"><br></p>
+            </div>
+
+        </div>
+    </body>
+</html>

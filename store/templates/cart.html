@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <h1>Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td><td>Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, j in books.items() %}
+                <tr>
+                    <td>{{ i }}.</td><td>{{ j }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/"><button>Back to store</button></a>
+
+
+{% endblock %}

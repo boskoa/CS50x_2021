@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <title>AJAX</title>
+    </head>
+    <body>
+        <button>Click me</button>
+        <p></p>
+
+        <script>
+            function ajax_request(arg) {
+                let xml = new XMLHttpRequest();
+                xml.onreadystatechange = function() {
+                    if (xml.readyState == 4 && xml.status == 200) {
+                        document.querySelector("p").innerHTML = xml.responseText;
+                    }
+                };
+                xml.open("GET", arg, true);
+                xml.send();
+            }
+
+            document.querySelector("button").addEventListener("click", () => ajax_request("proba.html"));
+        </script>
+    </body>
+</html>

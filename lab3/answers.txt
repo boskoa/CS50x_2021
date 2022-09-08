@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: Faster running time for sorted than unsorted sequences.
+
+sort2 uses: merge sort
+
+How do you know?: Same running times for sorted and unsorted sequences, but faster than sort3, indicating (n log n), not (n * n).
+
+sort3 uses: selection sort
+
+How do you know?: Same running times for sorted and unsorted sequences.

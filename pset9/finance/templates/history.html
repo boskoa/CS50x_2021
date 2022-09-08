@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Trading history
+{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th><th>Symbol</th><th>Shares</th><th>Price</th><th>Transaction type</th><th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in purchases %}
+                <tr>
+                    <td>{{ i["stock_name"] }}</td><td>{{ i["stock_symbol"] }}</td><td>{{ i["stock_amount"] }}</td><td>{{ i["stock_price"] | usd }}</td>
+                    <td>{{ "buying" if i["stock_amount"]>0 else "selling" }}</td><td>{{ i["time"] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

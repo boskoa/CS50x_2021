@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    <input id="inp" autocomplete="off" autofocus name="q" placeholder="Query" type="search">
+
+    <ul></ul>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let inp = document.querySelector("#inp");
+        inp.addEventListener("keyup", function() {
+            $.get("/search?q=" + inp.value, function(titles) {
+                let lista = '';
+                for (let i of titles) {
+                    lista += "<li>" + i.title + "</li>";
+                }
+                document.querySelector("ul").innerHTML = lista;
+            });
+        });
+    </script>
+
+{% endblock %}

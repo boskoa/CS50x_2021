@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}BStock market{% endblock %}
+
+{% block main %}
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th><th>Name</th><th>Shares</th><th>Price</th><th>TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in stcks %}
+                <tr>
+                    <td>{{ i["stock_symbol"] }}</td><td>{{ i["stock_name"] }}</td><td>{{ i["sum"] }}</td>
+                    <td>{{ cur_prices[i["stock_symbol"]] }}</td><td>{{ (cur_prices[i["stock_symbol"]] * i["sum"])  | usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th class="right" colspan="4">CASH</th><td>{{ cash | usd}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th class="right" colspan="4">TOTAL</th><td>{{ value | usd }}</td>
+            </tr>
+        </tfoot>
+    </table>
+
+{% endblock %}
